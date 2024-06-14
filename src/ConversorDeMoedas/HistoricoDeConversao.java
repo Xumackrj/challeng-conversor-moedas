@@ -9,10 +9,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class HistoricoDeConversao {
-    private List<Map<String, Object>> historico;
-    private Gson gson;
-    private String caminhoDiretorio;
-    private String nomeArquivo;
+    private final List<Map<String, Object>> historico;
+    private final Gson gson;
+    private final String caminhoDiretorio;
+    private final String nomeArquivo;
 
     public HistoricoDeConversao(Gson gson, String caminhoDiretorio, String nomeArquivo) {
         this.gson = gson;

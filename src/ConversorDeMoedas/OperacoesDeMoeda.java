@@ -3,7 +3,7 @@ package ConversorDeMoedas;
 import com.google.gson.JsonObject;
 
 public class OperacoesDeMoeda {
-    private JsonObject taxasDeConversao;
+    private final JsonObject taxasDeConversao;
 
     public OperacoesDeMoeda(JsonObject taxasDeConversao) {
         this.taxasDeConversao = taxasDeConversao;

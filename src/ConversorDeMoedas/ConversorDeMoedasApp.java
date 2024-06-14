@@ -38,7 +38,7 @@ public class ConversorDeMoedasApp {
 
         JsonObject jsonTaxas = configuracaoGson.fromJson(respostaHttp.body(), JsonObject.class);
         OperacoesDeMoeda operacoesMoeda = new OperacoesDeMoeda(jsonTaxas);
-        HistoricoDeConversao historicoConversao = new HistoricoDeConversao(configuracaoGson, "C:\\Users\\ffgus\\Desktop\\ConversorDeMoedas\\historico", "historico_conversoes.txt");
+        HistoricoDeConversao historicoConversao = new HistoricoDeConversao(configuracaoGson, "/home/lucas/Documents/challeng-conversorMoedas/historico", "historico_conversoes.txt");
 
         System.out.println("""
                 Olá! Bem-vindo ao nosso Conversor de Moedas.
@@ -51,7 +51,14 @@ public class ConversorDeMoedasApp {
                 System.out.println("""
                     ========================================================================
                     Por favor, informe a sigla da moeda de origem :
-                    Exemplos: USD, EUR, BRL, ARS, GBP
+                    Exemplos:
+                    
+                    Dólar Americano (USD);
+                    Euro (EUR);
+                    Real (BRL);
+                    peso argentino (ARS);
+                    Libra Esterlina (GBP).
+                    
                     """);
 
                 String siglaOrigem = scanner.nextLine().toUpperCase();
@@ -66,8 +73,15 @@ public class ConversorDeMoedasApp {
 
                 System.out.println("""
                     Agora, informe a sigla da moeda para a qual deseja converter :
-                    Exemplos: USD, EUR, BRL, ARS, GBP
-                    """);
+                   Exemplos:
+                
+                   Dólar Americano (USD);
+                   Euro (EUR);
+                   Real (BRL);
+                   peso argentino (ARS);
+                   Libra Esterlina (GBP).
+                   
+                   """);
 
                 String siglaDestino = scanner.nextLine().toUpperCase();
                 if (siglaDestino.equalsIgnoreCase("sair")) {
